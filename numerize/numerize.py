@@ -65,5 +65,11 @@ def numerize(n, decimals=2):
         else:
             n = n / 1000000000000
             return is_negative_string + str(drop_zero(round_num(n, decimals))) + "T"
+           elif n >= 1000000000000 and n < 1000000000000000:
+    if n % 1000000000000000 == 0:
+        return is_negative_string + str(int(n / 1000000000000)) + "T"
+    else:
+        n = n / 1000000000000000
+        return is_negative_string + str(drop_zero(round_num(n, decimals))) + "T"
     else:
         return is_negative_string + str(n)
